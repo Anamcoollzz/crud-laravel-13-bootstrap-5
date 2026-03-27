@@ -9,5 +9,9 @@ Route::get('/', function () {
 // Login routes
 use App\Http\Controllers\UserController;
 
-Route::get('/login', [UserController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [UserController::class, 'processLogin'])->name('login.process');
+Route::get('/login', [UserController::class, 'showLoginForm'])->middleware('guest')->name('login');
+Route::post('/login', [UserController::class, 'processLogin'])->middleware('guest')->name('login.process');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware('auth')->name('dashboard');

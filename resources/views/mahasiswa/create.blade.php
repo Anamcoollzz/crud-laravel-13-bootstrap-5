@@ -9,6 +9,16 @@
 </head>
 
 <body class="bg-light">
+  <nav class="navbar navbar-expand-lg bg-white border-bottom">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="{{ route('dashboard') }}">{{ config('app.name', 'Laravel') }}</a>
+      <div class="ms-auto d-flex align-items-center gap-2">
+        <a href="{{ route('dashboard') }}" class="btn btn-outline-secondary btn-sm">Dashboard</a>
+        <a href="{{ route('mahasiswa.index') }}" class="btn btn-primary btn-sm">Data Mahasiswa</a>
+      </div>
+    </div>
+  </nav>
+
   <main class="container py-4 py-md-5">
     <div class="row justify-content-center">
       <div class="col-12 col-lg-8">

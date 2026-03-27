@@ -12,6 +12,9 @@
   <nav class="navbar navbar-expand-lg bg-white border-bottom">
     <div class="container">
       <a class="navbar-brand fw-semibold" href="{{ route('dashboard') }}">{{ config('app.name', 'Laravel') }}</a>
+      <div class="d-flex align-items-center gap-2">
+        <a href="{{ route('mahasiswa.index') }}" class="btn btn-outline-primary btn-sm">CRUD Mahasiswa</a>
+      </div>
       <div class="ms-auto d-flex align-items-center gap-3">
         <span class="text-secondary small">Hi, {{ auth()->user()->name }}</span>
         <form method="POST" action="{{ route('logout') }}" class="m-0">
@@ -31,9 +34,6 @@
             <p class="text-secondary mb-4">Selamat datang, {{ auth()->user()->name }}. Kamu berhasil login.</p>
             <div class="alert alert-success mb-0" role="alert">
               Login sukses menggunakan akun <strong>{{ auth()->user()->email }}</strong>.
-            </div>
-            <div class="mt-4">
-              <a href="{{ route('mahasiswa.index') }}" class="btn btn-primary">Menu CRUD Mahasiswa</a>
             </div>
           </div>
         </div>

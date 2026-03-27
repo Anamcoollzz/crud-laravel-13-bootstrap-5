@@ -12,8 +12,12 @@
   <nav class="navbar navbar-expand-lg bg-white border-bottom">
     <div class="container">
       <a class="navbar-brand fw-semibold" href="{{ route('dashboard') }}">{{ config('app.name', 'Laravel') }}</a>
-      <div class="ms-auto">
+      <div class="ms-auto d-flex align-items-center gap-3">
         <span class="text-secondary small">Hi, {{ auth()->user()->name }}</span>
+        <form method="POST" action="{{ route('logout') }}" class="m-0">
+          @csrf
+          <button type="submit" class="btn btn-outline-danger btn-sm">Logout</button>
+        </form>
       </div>
     </div>
   </nav>

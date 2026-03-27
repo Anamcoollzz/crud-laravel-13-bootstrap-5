@@ -25,4 +25,15 @@ class UserController extends Controller
         }
         return back()->with('error', 'Email atau password salah!');
     }
+
+    // Proses logout
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('login');
+    }
 }

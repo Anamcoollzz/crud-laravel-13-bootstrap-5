@@ -2,15 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 
-class Mahasiswa extends Model
-{
-    protected $fillable = [
-        'nim',
-        'nama',
-        'jurusan',
-        'angkatan',
-        'email',
-    ];
-}
+#[Fillable([
+    'nim',
+    'nama',
+    'jurusan',
+    'angkatan',
+    'email',
+])]
+class Mahasiswa extends Model {}

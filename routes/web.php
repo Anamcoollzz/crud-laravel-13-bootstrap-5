@@ -8,6 +8,7 @@ Route::get('/', function () {
 
 // Login routes
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MahasiswaController;
 
 Route::get('/login', [UserController::class, 'showLoginForm'])->middleware('guest')->name('login');
 Route::post('/login', [UserController::class, 'processLogin'])->middleware('guest')->name('login.process');
@@ -16,3 +17,5 @@ Route::post('/logout', [UserController::class, 'logout'])->middleware('auth')->n
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware('auth')->name('dashboard');
+
+Route::resource('/mahasiswa', MahasiswaController::class)->middleware('auth');

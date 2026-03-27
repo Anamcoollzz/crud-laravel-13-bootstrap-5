@@ -32,6 +32,9 @@
             <div class="alert alert-success mb-0" role="alert">
               Login sukses menggunakan akun <strong>{{ auth()->user()->email }}</strong>.
             </div>
+            <div class="mt-4">
+              <a href="{{ route('mahasiswa.index') }}" class="btn btn-primary">Menu CRUD Mahasiswa</a>
+            </div>
           </div>
         </div>
       </div>

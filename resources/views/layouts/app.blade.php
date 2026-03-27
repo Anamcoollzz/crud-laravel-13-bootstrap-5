@@ -26,6 +26,9 @@
             <li class="nav-item">
               <a class="nav-link {{ request()->routeIs('mahasiswa.*') ? 'active fw-semibold' : '' }}" href="{{ route('mahasiswa.index') }}">Mahasiswa</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link {{ request()->routeIs('kelas.*') ? 'active fw-semibold' : '' }}" href="{{ route('kelas.index') }}">Kelas</a>
+            </li>
           </ul>
 
           <div class="ms-auto d-flex align-items-center gap-3">
